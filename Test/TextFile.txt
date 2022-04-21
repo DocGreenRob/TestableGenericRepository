@@ -1,1 +1,3 @@
 ﻿https://stackoverflow.com/questions/16064902/dependency-injection-in-unit-of-work-pattern-using-repositories/16085891#16085891
+
+2nd answer 
