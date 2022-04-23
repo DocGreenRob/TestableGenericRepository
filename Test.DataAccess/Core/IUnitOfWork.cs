@@ -1,8 +1,10 @@
-﻿namespace Test.DataAccess.Core
+﻿using System;
+
+namespace Test.DataAccess.Core
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        void Register(IRepository repository);
-        void Commit();
+        T GetRepository<T>() where T : class;
+        void Save();
     }
 }

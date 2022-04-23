@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Test.DataAccess.Core
 {
@@ -6,7 +7,12 @@ namespace Test.DataAccess.Core
     {
         public GenericRepository(IUnitOfWork unitOfWork)
         {
-            unitOfWork.Register(this);
+            unitOfWork.GetRepository<T>();
+        }
+
+        public async Task<string> GetAsync()
+        {
+            return await Task.FromResult("result from db");
         }
 
         public void Submit()
