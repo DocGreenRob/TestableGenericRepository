@@ -1,19 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Test.DataAccess;
 using Test.DataAccess.Core;
-using Test.DataAccess.Entities;
-using Test.DataAccess.Repository;
 
 namespace Test
 {
@@ -37,7 +29,7 @@ namespace Test
             });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<IRepository<Department>, DepartmentRepository>();
+            services.AddScoped<ITestManager, TestManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
